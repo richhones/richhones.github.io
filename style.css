@@ -1,4 +1,4 @@
-p {
+p , a, b, em{
     font-family: "Manrope", Helvetica, sans-serif;
     color: #2b2b2b;
     font-size: 14px;
@@ -16,6 +16,7 @@ h1 {
     letter-spacing: 18px;
     text-transform: uppercase;
     font-weight: 100;
+    display:inline-block;
 }
 
 h1:hover{ 
@@ -27,11 +28,6 @@ body {
     background-color:  #fcba03;
     padding: 5px;
 }
-
-em {
-    font-weight: 100;
-}
-
 
 h2 {
     font-size: 15px;
@@ -58,10 +54,17 @@ button {
     text-transform: uppercase;
     margin: 0;
     padding: 0;
+    float: right;
 }
 
-b {
+a, b {
     color: #222222;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.dark-mode a {
+    color: #ffffff;
 }
 
 .dark-mode b {
@@ -96,6 +99,7 @@ button:hover {
     border: none;
     text-align: left;
     outline: none;
+    padding: 0px 0px;
 }
 
 .collapsible:hover {
@@ -105,6 +109,6 @@ button:hover {
 .content {
     display: none;
     overflow: hidden;
-    padding: 0px 0px 0px 100px;
+    padding: 0px 0px 0px 50px;
     max-width: 60%;
 }
