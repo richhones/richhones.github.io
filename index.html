@@ -12,31 +12,43 @@
 
 <button type="button" id="dark-mode-button" onclick="toggleDarkMode()" display="inline">Its too bright</button>
 
-<h2 class="collapsible">about</h2>
-<div class="content">
-    <p id="about" margin=60px>
-        Dr Richard Jones is a <b>software developer</b> and <b>computer graphics researcher</b> based in <b>London</b>. His work focuses on developing tools for simulating physical phenomena such as liquids and granular materials as well as more general volumetric and particle manipulation. 
-    </p>
+<div id="about">
+    <h2 class="collapsible">About</h2>
+    <div class="content" id="about-content">
+        <p>
+            Dr Richard Jones is a <b>software developer</b> and <b>computer graphics researcher</b> based in <b>London</b>. His work focuses on developing tools for simulating physical phenomena such as liquids and granular materials as well as general volumetric and particle manipulation. 
+        </p>
+    </div>
 </div>
-<h2 class="collapsible">work</h2>
-<div class="content">
-    <p>
-        Droplets, Splashes and Sprays: Highly Detailed Liquids in Visual Effects Production - EngD Thesis - <b>Jones</b> 
-    </p>
-    <p>
-        A JIT expression language for fast manipulation of VDB points and volumes - Avramoussis, <b>Jones</b> 
-    </p>
-    <p>
-        Physically Based Droplet Interaction - <em>Jones</em> & Southern
-    </p>
+<div id="work">
+    <h2 class="collapsible">Work</h2>
+    <div class="content" id="work-content">
+        <div id="tools">
+            <h3>Tools</h3>
+            <p>OpenVDB AX</p>
+        </div>
+        <div id="publications">
+            <h3>Publications</h3>
+            <p>
+                Droplets, Splashes and Sprays: Highly Detailed Liquids in Visual Effects Production - EngD Thesis - <b>Jones</b> 
+            </p>
+            <p>
+                A JIT expression language for fast manipulation of VDB points and volumes - Avramoussis, <b>Jones</b>, Warner, Gochez & Keeler
+            </p>
+            <p>
+                Physically Based Droplet Interaction - <b>Jones</b> & Southern
+            </p>
+        </div>
+    </div>
 </div>
-<h2 class="collapsible">contact</h2>
-<div class="content">
-    <p id="about">
-        <b>mail@richardjon.es</b>
-    </p>
+<div id="contact">
+    <h2 class="collapsible">Contact</h2>
+    <div class="content" id="contact-content">
+        <p>
+            <b>mail@richardjon.es</b>
+        </p>
+    </div>
 </div>
-
 <script>
     var coll = document.getElementsByClassName("collapsible");
     var i;
@@ -46,10 +58,10 @@
       coll[i].addEventListener("click", function() {
         this.classList.toggle("active");
         var content = this.nextElementSibling;
-        if (content.style.display === "inline") {
+        if (content.style.display === "block") {
           content.style.display = "none";
         } else {
-          content.style.display = "inline";
+          content.style.display = "block";
           openPanel = i;
         }
       });
