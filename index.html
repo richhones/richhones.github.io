@@ -1,13 +1,66 @@
 <html>
 <head>
     <link rel="stylesheet" href="style.css">
+    <script src="collapsible.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Manrope' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
 </head>
-<body>
-<h1 id="greeting">
-        R I C H A R D J O N . E S
+<body onload="setDarkModeToPrevious()">
+<h1>
+    richardjon.es
 </h1>
-<h2>
-    coming soon
-</h2>
+
+<button type="button" id="dark-mode-button" onclick="toggleDarkMode()" display="inline">Its too bright</button>
+
+<h2 class="collapsible">about</h2>
+<div class="content">
+    <p id="about" margin=60px>
+        Dr Richard Jones is a <b>software developer</b> and <b>computer graphics researcher</b> based in <b>London</b>. His work focuses on developing tools for simulating physical phenomena such as liquids and granular materials as well as more general volumetric and particle manipulation. 
+    </p>
+</div>
+<h2 class="collapsible">work</h2>
+<div class="content">
+    <p>
+        Droplets, Splashes and Sprays: Highly Detailed Liquids in Visual Effects Production - EngD Thesis - <b>Jones</b> 
+    </p>
+    <p>
+        A JIT expression language for fast manipulation of VDB points and volumes - Avramoussis, <b>Jones</b> 
+    </p>
+    <p>
+        Physically Based Droplet Interaction - <em>Jones</em> & Southern
+    </p>
+</div>
+<h2 class="collapsible">contact</h2>
+<div class="content">
+    <p id="about">
+        <b>mail@richardjon.es</b>
+    </p>
+</div>
+
+<script>
+    var coll = document.getElementsByClassName("collapsible");
+    var i;
+    var openPanel;
+    
+    for (i = 0; i < coll.length; i++) {
+      coll[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        if (content.style.display === "inline") {
+          content.style.display = "none";
+        } else {
+          content.style.display = "inline";
+          openPanel = i;
+        }
+      });
+    }
+
+    var d = new Date();
+    page.currentYear = d.getFullYear(); 
+</script>
+
 </body>
+<footer>
+    <small>Copyright 2020 &copy; Richard Jones</small>
+</footer>
 </html>
