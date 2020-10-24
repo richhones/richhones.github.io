@@ -6,46 +6,49 @@
     <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
 </head>
 <body onload="setDarkModeToPrevious()">
-<h1>
-    richardjon.es<button type="button" id="dark-mode-button" onclick="toggleDarkMode()" display="inline">Its too bright</button>
+<h1 id="title">
+    richardjon.es
 </h1>
+<button type="button" id="dark-mode-button" onclick="toggleDarkMode()" display="inline">It's too bright</button>
 
-
-
-<div id="about">
+<div class="section" id="about">
     <h2 class="collapsible">About</h2>
     <div class="content" id="about-content">
         <p>
-            I am a <b>computer graphics researcher</b> and <b>software developer</b> based in <b>London</b>. Focusing on developing efficient and scalable simulations of physical phenomena such as liquids and granular materials, I have worked with DNEG since 2014 developing a collection of simulation tools for large scale VFX with industry standard technologies such as OpenVDB and SideFX's Houdini. I am one of the authors of, and a continued contributor to, OpenVDB AX first open-sourced by DNEG in 2017 and received my engineering doctorate from the Centre for Digital Entertainment @ Bournemouth University in 2019. 
+            I am a <b>computer graphics researcher</b> and <b>software developer</b> based in <b>London</b>. Focusing on simulation of physical phenomena such as liquids and granular materials, I have worked with DNEG since 2014 developing a collection of tools for the creation of large-scale visual effects, using industry leading technologies such as OpenVDB and SideFX's Houdini. I am one of the authors of and a continued contributor to OpenVDB AX, a language and tool-set for quickly manipulating VDB data, first open-sourced by DNEG in 2017. In 2019, I received my engineering doctorate from the Centre for Digital Entertainment at Bournemouth University. 
         </p>
     </div>
 </div>
-<div id="work">
+<div class="section" id="work">
     <h2 class="collapsible">Work</h2>
     <div class="content" id="work-content">
-        <div id="tools">
+        <div class="minor-section" id="tools">
             <h3>Tools</h3>
             <a href="https://github.com/dneg/openvdb_ax">OpenVDB AX</a>
         </div>
-        <div id="publications">
+        <div class="minor-section" id="publications">
             <h3>Publications</h3>
             <p>
-                Droplets, Splashes and Sprays: Highly Detailed Liquids in Visual Effects Production - EngD Thesis - <b>Jones</b> 
+                <a href="https://dl.acm.org/doi/10.1145/3233085.3233087">A JIT expression language for fast manipulation of VDB points and volumes</a> - DigiPro 2018 - Avramoussis, <b>Jones</b>, Warner, Gochez & Keeler
             </p>
             <p>
-                A JIT expression language for fast manipulation of VDB points and volumes - Avramoussis, <b>Jones</b>, Warner, Gochez & Keeler
+                <a href="https://dl.acm.org/doi/10.1145/3099564.3099573">Physically Based Droplet Interaction</a> - SCA 2017 - <b>Jones</b> & Southern
             </p>
+        </div>
+        <div class="minor-section" id="thesis">
+            <h3>Thesis</h3>
             <p>
-                Physically Based Droplet Interaction - <b>Jones</b> & Southern
+                <a href="http://eprints.bournemouth.ac.uk/32786/">Droplets, Splashes and Sprays: Highly Detailed Liquids in Visual Effects Production</a> - EngD in Digital Media - CDE @ BU
             </p>
         </div>
     </div>
 </div>
-<div id="contact">
+<div class="section" id="contact">
     <h2 class="collapsible">Contact</h2>
     <div class="content" id="contact-content">
         <p>
-            <b>mail@richardjon.es</b>
+            <a href="https://www.linkedin.com/in/richhjones/" class="linkedin"><img src="linkedinsmallwhite.svg" alt="LinkedIn" width="50%"></a>
+            <!-- <b>mail@richardjon.es</b> -->
         </p>
     </div>
 </div>
@@ -55,7 +58,7 @@
     var openPanel;
     
     for (i = 0; i < coll.length; i++) {
-      coll[i].addEventListener("click", function() {
+        coll[i].addEventListener("click", function() {
         this.classList.toggle("active");
         var content = this.nextElementSibling;
         if (content.style.display === "inline-block") {
@@ -66,9 +69,6 @@
         }
       });
     }
-
-    var d = new Date();
-    page.currentYear = d.getFullYear(); 
 </script>
 
 </body>

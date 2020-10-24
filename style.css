@@ -1,13 +1,15 @@
 p , a, b, em{
     font-family: "Manrope", Helvetica, sans-serif;
-    color: #2b2b2b;
+    color: #ffffff;
     font-size: 14px;
+    margin: 10 0;
 }
 
 h1, h2, h3{
     font-family: "Manrope", Helvetica, sans-serif;
-    color: #ffd35b;
+    color: #fdd565;
     text-transform: uppercase;
+    margin: 2px;
 }
 
 h1 {
@@ -25,8 +27,12 @@ h1:hover{
 }
 
 body {
-    background-color:  #fcba03;
+    background-color:  #fca738;
     padding: 5px;
+    -webkit-font-smoothing: antialiased;
+	-moz-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-rendering: optimizeLegibility;
 }
 
 h2 {
@@ -58,7 +64,7 @@ button {
 }
 
 a, b {
-    color: #222222;
+    color: #ffffff;
     text-decoration: none;
     font-weight: bold;
 }
@@ -91,8 +97,6 @@ button:hover {
     color: #ffffff;
 }
 
-
-
 .collapsible {
     color: #ffd35b;
     cursor: pointer;
@@ -112,3 +116,84 @@ button:hover {
     padding: 0px 0px 0px 50px;
     max-width: 60%;
 }
+
+.section {
+    padding: 5px 0px 5px 0px;
+}
+
+.minor-section {
+    padding: 2px 0px 3px 0px;
+}
+
+footer {
+    padding: 10px 0px;
+}
+
+
+ul {
+    display: flex;
+    min-height: 100vh;
+    max-height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+  
+  li {
+    flex: 1;
+    display: flex;
+    align-items: stretch;
+    padding: 20px;
+    background: #E74C3C;
+    cursor: pointer;
+    transition: all .5s ease;
+    
+    &:hover {
+      background: darken(#E74C3C, 3);
+    }
+    
+    &.active {
+      flex: 5;
+      background: #fff;
+      cursor: default;
+      
+      h2 {
+        color: #E74C3C;
+      }
+      
+      .section-content {
+        flex: 4;
+        opacity: 1;
+        color: #E74C3C;
+      }
+    }
+    
+    .section-title {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      color: white;
+      
+      h2 {
+        margin: 0;
+        transform: rotate(-90deg);
+        white-space: nowrap;
+      }
+    }
+    
+    .section-content {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      margin: 0;
+      padding: 0;
+      opacity: 0;
+      transition: all .25s .1s ease-out;
+    }
+  }
+  
+  
