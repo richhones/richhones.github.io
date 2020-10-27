@@ -6,7 +6,7 @@
     <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
 </head>
 <body onload="setDarkModeToPrevious()">
-<h1 id="title">
+<h1 id="title" onclick="pressHome()">
     richardjon.es
 </h1>
 <button type="button" id="dark-mode-button" onclick="toggleDarkMode()" display="inline">It's too bright</button>
@@ -53,22 +53,26 @@
     </div>
 </div>
 <script>
-    var coll = document.getElementsByClassName("collapsible");
-    var i;
-    var openPanel;
-    
-    for (i = 0; i < coll.length; i++) {
-        coll[i].addEventListener("click", function() {
-        this.classList.toggle("active");
-        var content = this.nextElementSibling;
-        if (content.style.display === "inline-block") {
-          content.style.display = "none";
-        } else {
-          content.style.display = "inline-block";
-          openPanel = i;
-        }
-      });
+var collapsible = document.getElementsByClassName("collapsible");
+function accordion() {
+  for(var i = 0; i < collapsible.length; i++){
+    if(this != collapsible[i]){
+        collapsible[i].nextElementSibling.style.display = "none";
     }
+    else {
+        collapsible[i].nextElementSibling.style.display = "inline-block" ;
+    }
+  }
+}
+[].forEach.call(collapsible, function(h2) {
+    h2.addEventListener('click', accordion);
+});
+
+function pressHome() {
+    for (var i = 0; i < collapsible.length; ++i) {
+        collapsible[i].nextElementSibling.style.display = "none";
+    }
+}
 </script>
 
 </body>
