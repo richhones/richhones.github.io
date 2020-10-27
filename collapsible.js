@@ -2,18 +2,16 @@ function toggleDarkMode() {
     var element = document.body;
     if (element.classList.toggle("dark-mode")) {
         document.getElementById("dark-mode-button").innerHTML="It's too dark";
-        localStorage.isDark = true;
-        document.getElementById("linkedin").src="linkedin2.svg"
+        localStorage.setItem("color-mode", "dark");
     }
     else {
         document.getElementById("dark-mode-button").innerHTML="It's too bright";
-        localStorage.isDark = false;
-        document.getElementById("linkedin").src="linkedin.svg"
-    } 
+        localStorage.setItem("color-mode", "light");
+      } 
 }
 function setDarkModeToPrevious() {
     if (typeof(Storage) !== "undefined") {
-      if (localStorage.isDark == true) {
+      if (localStorage.getItem("color-mode") == "dark") {
         toggleDarkMode();
       } 
     } 
